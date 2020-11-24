@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Lead Generation Tool</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link href="css/material.css" rel="stylesheet" />
+    <link href="css/material-dashboard.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" />
+</head>
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Lead Generation Tool</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for meeting..." aria-label="Search" aria-describedby="basic-addon2" />
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ml-auto ml-md-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav" style="margin-top:30px">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayout" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Admin
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayout" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="index.html">Dashboard</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Market
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="ActivateMeetings.html">Active/Approve Meetings</a>
+                                <a class="nav-link" href="DeactivateMeetings.html">Deactivate Meetings</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Customer Care
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="MeetingSearch.html">
+                                    Book Now
+                                </a>
+                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="MemberBoooking.html">
+                                    Cancel Booking
+                                </a>
+                            </nav>
+                        </div>
+                        <a class="nav-link" href="LeadGeneration.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Leads
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Admin
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    <h1 class="mt-4">Booking</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active"> Meetings Search / Booking</li>
+                    </ol>
+                    <div class="content">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="card-header card-header-primary">
+                                            <h4 class="card-title">Meeting Booking</h4>
+                                            <p class="card-category">Complete your booking</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">Fist Name</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">Middle Name</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">Last Name</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">Email address</label>
+                                                            <input type="email" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">Phone</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">Adress</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">City</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">Country</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">Postal Code</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">Seat</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="form-group">
+                                                            <label>Notes</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <button class="btn btn-primary" style="margin-left:70%" onclick="bookingConfirmation()">Book</button>
+                                            <a href="MeetingSearch.html" class="btn btn-primary">Back</a>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card card-profile">
+                                        <div class="card-avatar" style="height: 85px; width: 85px;">
+                                            <a href="javascript:;">
+                                                <i class="fas fa-calendar-check" style="font-size:35px;margin-top:25px;color:#27b05e !important"></i>
+                                            </a>
+                                        </div>
+                                        <div class="card-body" style="margin-top:0px !important;height:450px;">
+                                            <h6 class="card-category text-gray">Meeting Information</h6>
+                                            <h4 class="card-title">Medicare Advantage Meeting</h4>
+                                            <p class="card-description">
+                                                <i class="fas fa-clock"> </i><label style="margin-left:5px;">12th Dec 2020 at 4:00 PM</label><br />
+                                                <i class="fas fa-map-marker"></i> <label style="margin-left:5px;">The Society Room of Hartford</label>
+                                            </p>
+                                            <img src="assets\img\map.png" alt="map" width="250" height="250">
+                                            <!--<a href="javascript:;" class="btn btn-primary btn-round">More Info</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Lead Generation Tool 2020</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        function bookingConfirmation() {
+            swal({
+                title: 'Confirmed',
+                text: 'Booking Number : CONF0000234 is confirmed.',
+                type: 'success',
+                timer: 2000
+            });
+
+        }
+    </script>
+    <style>
+        .tim-typo {
+            padding-left: 25%;
+            margin-bottom: 40px;
+            position: relative;
+            width: 100%;
+        }
+
+            .tim-typo.tim-note {
+                bottom: 5px;
+                color: #c0c1c2;
+                display: block;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 15px;
+                left: 0;
+                margin-left: 20px;
+                position: absolute;
+                width: 260px;
+            }
+
+        /* offline-doc */
+
+        .offline-doc.navbar.navbar-transparent {
+            padding-top: 25px;
+            border-bottom: none;
+        }
+
+            .offline-doc.navbar.navbar-transparent.navbar-minimize {
+                display: none;
+            }
+
+            .offline-doc.navbar.navbar-transparent.navbar-brand,
+            .offline-doc.navbar.navbar-transparent.collapse.navbar-nav.nav-link {
+                color: #FFFFFF !important;
+            }
+
+        .offline-doc.footer {
+            z-index: 3 !important;
+        }
+
+        .offline-doc.page-header.container {
+            z-index: 3;
+        }
+
+        .offline-doc.page-header:after {
+            background-color: rgba(0, 0, 0, 0.5);
+            content: "";
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        #map {
+            z-index: 2;
+            height: calc(100vh - 70px);
+            margin-top: 70px;
+        }
+    </style>
+</body>
+</html>
